@@ -7,12 +7,9 @@ def reconstruct_trip(tickets):
       destination = tripTuple[1]
       if arrival == None and destination not in itinerary: itinerary.insert(0,destination)
       elif destination == None and arrival not in itinerary: itinerary.append(arrival)
-      elif destination != None and arrival in itinerary and destination not in itinerary :
-          itinerary.insert(itinerary.index(arrival)+1, destination)
-          print(itinerary)
-      elif arrival != None and destination in itinerary  and arrival not in itinerary :
-          itinerary.insert(itinerary.index(destination), arrival)
-          print(itinerary)
+      elif destination and arrival in itinerary and destination not in itinerary : itinerary.insert(itinerary.index(arrival)+1, destination)
+      elif arrival and destination in itinerary  and arrival not in itinerary : itinerary.insert(itinerary.index(destination), arrival)
+          
 
   return itinerary
 
