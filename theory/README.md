@@ -81,6 +81,7 @@ both `antelope` and `antelopes`.)
   * Draw a state machine diagram for a VT-100 that can consume regular
     character sequences as well as the two above ESC sequences.
 
+    ![answer](vt-100SS.PNG)
 > If you're curious, [here are all the VT-100 escape
 > sequences](http://ascii-table.com/ansi-escape-sequences-vt-100.php).
 > More common these days is a superset of VT-100 called [ANSI escape

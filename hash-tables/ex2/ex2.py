@@ -9,7 +9,7 @@ def reconstruct_trip(tickets):
       elif destination == None and arrival not in itinerary: itinerary.append(arrival)
       elif destination and arrival in itinerary and destination not in itinerary : itinerary.insert(itinerary.index(arrival)+1, destination)
       elif arrival and destination in itinerary  and arrival not in itinerary : itinerary.insert(itinerary.index(destination), arrival)
-          
+
 
   return itinerary
 
