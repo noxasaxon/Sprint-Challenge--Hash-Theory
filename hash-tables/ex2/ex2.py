@@ -1,6 +1,32 @@
 def reconstruct_trip(tickets):
-  pass 
+  itinerary = []
+
+  while len(itinerary) != len(tickets) - 1:
+    for tripTuple in tickets: 
+      arrival = tripTuple[0]
+      destination = tripTuple[1]
+      if arrival == None and destination not in itinerary: itinerary.insert(0,destination)
+      elif destination == None and arrival not in itinerary: itinerary.append(arrival)
+      elif destination != None and arrival in itinerary and destination not in itinerary :
+          itinerary.insert(itinerary.index(arrival)+1, destination)
+          print(itinerary)
+      elif arrival != None and destination in itinerary  and arrival not in itinerary :
+          itinerary.insert(itinerary.index(destination), arrival)
+          print(itinerary)
+
+  return itinerary
 
 if __name__ == '__main__':
   # You can write code here to test your implementation using the Python repl
-  pass
+  print(reconstruct_trip([
+  ('PIT', 'ORD'),
+  ('XNA', 'CID'),
+  ('SFO', 'BHM'),
+  ('FLG', 'XNA'),
+  (None, 'LAX'), 
+  ('LAX', 'SFO'),
+  ('CID', 'SLC'),
+  ('ORD', None),
+  ('SLC', 'PIT'),
+  ('BHM', 'FLG'),
+]))
